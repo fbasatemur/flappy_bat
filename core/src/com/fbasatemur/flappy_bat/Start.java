@@ -16,5 +16,8 @@ public interface Start {
     int scoreMultiplier = 1;
     int numberOfEnemies = 5;
     float maxBirdHeight = screenHeight - birdHeight;
+    float jumpSize = birdHeight / 4.5F;
+    int scoreFonSize = 7;
+    int endFontSize = 9;
 
 }

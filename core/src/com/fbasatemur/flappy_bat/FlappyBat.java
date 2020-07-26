@@ -55,13 +55,13 @@ public class FlappyBat extends ApplicationAdapter implements Start {
 
         scoreFont = new BitmapFont();
         scoreFont.setColor(Color.FOREST);
-        scoreFont.getData().setScale(8);
+        scoreFont.getData().setScale(Start.scoreFonSize);
 
         jumpSound = Gdx.audio.newSound(Gdx.files.internal("jump.wav"));
 
         endFont = new BitmapFont();
         endFont.setColor(Color.BROWN);
-        endFont.getData().setScale(10);
+        endFont.getData().setScale(Start.endFontSize);
     }
 
     @Override
@@ -74,10 +74,8 @@ public class FlappyBat extends ApplicationAdapter implements Start {
         if (state == State.START) {
 
             if (Gdx.input.justTouched()) {
-                hero.setDropRate(-25);
-                long id = jumpSound.play(1.0F);
-                jumpSound.setPitch(id, 2);
-                jumpSound.setLooping(id, false);
+                hero.setDropRate(-Start.jumpSize);
+                jumpSound.play();
             }
 
             if (hero.isKill()) {
